@@ -1,20 +1,24 @@
 #pragma once
 
+#include <vector>
 
 class Span
 {
 private:
+    Span(void);
     unsigned int _N;
-    Span( void );
+    std::vector<int> _numbers;
+    
 public:
-    Span( unsigned int N );
-    Span( const Span& copy );
-    Span& operator=(const Span& copy );
-    ~Span( void );
-	int shortestSpan( void );
+    Span(unsigned int N);
+    Span(const Span& copy);
+    Span& operator=(const Span& copy);
+    ~Span(void);
     void addNumber(const int &member);
-	int longestSpan( void );
-
+    int shortestSpan(void);
+    int longestSpan(void);
     template <typename It>
-    void addNumber(It begin, It end);    
+    void addNumber(It begin, It end);
 };
+
+#include "Span.tpp"
